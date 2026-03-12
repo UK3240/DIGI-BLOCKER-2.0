@@ -1,0 +1,371 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+    
+    body{
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background:#e9edf2;
+    color:#1f2933;
+    height:100vh;
+    overflow:hidden;
+    }
+    
+    .container{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    }
+    
+    /* HEADER */
+    
+    .header{
+    background:#ffffff;
+    border-bottom:1px solid #d8dde3;
+    padding:12px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+    }
+    
+    .header h1{
+    font-size:18px;
+    font-weight:600;
+    color:#2c3e50;
+    }
+    
+    /* BUTTONS */
+    
+    .header-buttons{
+    display:flex;
+    gap:10px;
+    }
+    
+    .btn{
+    padding:7px 14px;
+    border:1px solid #cfd6de;
+    background:#f7f9fb;
+    cursor:pointer;
+    font-size:13px;
+    border-radius:6px;
+    transition:all .2s;
+    }
+    
+    .btn:hover{
+    background:#eef2f6;
+    }
+    
+    .btn-primary{
+    background:#1976d2;
+    border-color:#1976d2;
+    color:white;
+    }
+    
+    .btn-success{
+    background:#2e7d32;
+    border-color:#2e7d32;
+    color:white;
+    }
+    
+    .btn-info{
+    background:#0288d1;
+    border-color:#0288d1;
+    color:white;
+    }
+    
+    /* MAIN CONTENT */
+    
+    .main-content{
+    display:flex;
+    flex:1;
+    overflow:hidden;
+    }
+    
+    /* TOOLBAR */
+    
+    .toolbar{
+    width:220px;
+    background:#ffffff;
+    border-right:1px solid #dfe4ea;
+    padding:15px;
+    overflow-y:auto;
+    }
+    
+    .toolbar h3{
+    font-size:14px;
+    margin-bottom:12px;
+    color:#333;
+    }
+    
+    .toolbar-section{
+    margin-bottom:18px;
+    }
+    
+    .toolbar-section h4{
+    font-size:12px;
+    color:#666;
+    margin-bottom:8px;
+    }
+    
+    /* SEARCH */
+    
+    .toolbar-search input{
+    width:100%;
+    padding:7px;
+    border:1px solid #d0d6dd;
+    border-radius:6px;
+    outline:none;
+    }
+    
+    .toolbar-search input:focus{
+    border-color:#1976d2;
+    }
+    
+    /* BLOCK ITEMS */
+    
+    .block-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:9px;
+    background:white;
+    border:1px solid #e2e6ea;
+    border-radius:6px;
+    margin-bottom:8px;
+    cursor:grab;
+    transition:all .2s;
+    }
+    
+    .block-item:hover{
+    border-color:#1976d2;
+    background:#f5f9ff;
+    transform:translateX(2px);
+    }
+    
+    .block-icon{
+    width:30px;
+    height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #444;
+    border-radius:4px;
+    background:white;
+    font-size:12px;
+    }
+    
+    /* WORKSPACE */
+    
+    .workspace{
+    flex:1;
+    background:#f8fafc;
+    position:relative;
+    overflow:auto;
+    }
+    
+    /* WORKSPACE CONTROL BAR */
+    
+    .workspace-controls{
+    background:white;
+    border-bottom:1px solid #dfe4ea;
+    padding:6px 12px;
+    display:flex;
+    justify-content:space-between;
+    }
+    
+    /* ZOOM BUTTON */
+    
+    .zoom-btn{
+    width:28px;
+    height:28px;
+    border:1px solid #cfd6de;
+    background:#f5f7fa;
+    cursor:pointer;
+    border-radius:6px;
+    }
+    
+    .zoom-btn:hover{
+    background:#e7edf5;
+    }
+    
+    /* GRID CANVAS */
+    
+    .canvas-container{
+    position:relative;
+    /* Increased workspace size for a larger drawing area */
+    min-width:4000px;
+    min-height:2500px;
+    
+    background:
+    linear-gradient(#e5e7eb 1px, transparent 1px),
+    linear-gradient(90deg,#e5e7eb 1px, transparent 1px);
+    
+    background-size:20px 20px;
+    }
+    
+    /* BLOCK */
+    
+    .block{
+    position:absolute;
+    cursor:move;
+    }
+    
+    /* BLOCK BODY */
+    
+    .block-content{
+    background:white;
+    border:1px solid #333;
+    padding:12px 18px;
+    min-width:90px;
+    text-align:center;
+    border-radius:6px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.15);
+    transition:.2s;
+    }
+    
+    .block:hover .block-content{
+    transform:scale(1.05);
+    box-shadow:0 6px 16px rgba(0,0,0,0.2);
+    }
+    
+    /* LABEL */
+    
+    .block-label{
+    font-size:10px;
+    color:#6b7280;
+    }
+    
+    .block-value{
+    font-size:14px;
+    font-weight:600;
+    }
+    
+    /* SUMMER */
+    
+    .summer-block{
+    border-radius:50%;
+    width:60px;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    }
+    
+    /* NODE */
+    
+    .node-block{
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    background:#1976d2;
+    }
+    
+    /* CONNECTION POINT */
+    
+    .connection-point{
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:white;
+    border:2px solid #1976d2;
+    border-radius:50%;
+    }
+    
+    .connection-point.input{
+    left:-6px;
+    top:50%;
+    transform:translateY(-50%);
+    }
+    
+    .connection-point.output{
+    right:-6px;
+    top:50%;
+    transform:translateY(-50%);
+    }
+    
+    /* CONNECTION LINES */
+    
+    .connection-line{
+    stroke:#374151;
+    stroke-width:2;
+    fill:none;
+    }
+    
+    .connection-line.selected{
+    stroke:#1976d2;
+    stroke-width:3;
+    }
+    
+    /* PROPERTIES PANEL */
+    
+    .properties-panel{
+    width:240px;
+    background:white;
+    border-left:1px solid #e2e6ea;
+    padding:15px;
+    overflow-y:auto;
+    }
+    
+    .property-group{
+    margin-bottom:14px;
+    }
+    
+    .property-group label{
+    font-size:11px;
+    margin-bottom:5px;
+    display:block;
+    }
+    
+    .property-group input,
+    .property-group select{
+    width:100%;
+    padding:7px;
+    border:1px solid #d0d6dd;
+    border-radius:6px;
+    }
+    
+    /* STATUS BAR */
+    
+    .status-bar{
+    background:#ffffff;
+    border-top:1px solid #dfe4ea;
+    padding:6px 12px;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+    }
+
+/*TAKE OFF BLOCK*/
+
+    .takeoff-block{
+        width:12px;
+        height:12px;
+        background:#111111;
+        border-radius:50%;
+        border:2px solid rgb(255, 255, 255);
+    }
+    
+    .takeoff-node{
+        width:12px;
+        height:12px;
+        background:#111;
+        border-radius:50%;
+    }
+    .block-item {
+        cursor: grab;
+        user-select: none;
+    }
+    
+    .block-item:active {
+        cursor: grabbing;
+    }
+    
+    .workspace {
+        position: relative;
+    }
+    
+    .block {
+        position: absolute;
+    }
